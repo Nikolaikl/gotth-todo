@@ -1,7 +1,6 @@
-
 package views
 import "strconv"
-import models "todo-go-htmx/models"
+import models "todo-gotth/models"
 
 templ TodoTableItem(todo models.Todo) {
     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-600 dark:hover:bg-grey-400" id={templ.EscapeString(string("todo-"+ strconv.Itoa(int(todo.Id)))) } >
