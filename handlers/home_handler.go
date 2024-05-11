@@ -9,13 +9,13 @@ import (
 )
 
 
-type HomeHtmlHandler struct {
-	db *database.SQLiteDatabase
+type HomeHTMLHandler struct {
+	Dbconn *database.SQLiteDatabase
 }
 
-func (h *HomeHtmlHandler) GetHome(ctx *gin.Context)  {
+func (h *HomeHTMLHandler) GetHome(ctx *gin.Context)  {
 	
-	todoList, err := h.db.All()
+	todoList, err := h.Dbconn.All()
 	if err != nil {
 		ctx.AbortWithError(http.StatusInternalServerError, err)
 		return

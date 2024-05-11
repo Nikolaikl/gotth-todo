@@ -12,7 +12,7 @@ import "bytes"
 
 import "todo-gotth/models"
 
-func TodoTable(todos []models.Todo) templ.Component {
+func ToDoTable(todos []models.ToDo) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -30,7 +30,7 @@ func TodoTable(todos []models.Todo) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		for _, todo := range todos {
-			templ_7745c5c3_Err = TodoTableItem(todo).Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = ToDoTableItem(todo).Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

@@ -7,7 +7,7 @@ templ Home(todos []models.ToDo){
         <head>
             <script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
             <script src="https://cdn.tailwindcss.com"></script>
-            <title>Todo App</title>
+            <title>ToDo App</title>
         </head>
         <style type="text/css">
             tr.htmx-swapping td {
@@ -18,7 +18,7 @@ templ Home(todos []models.ToDo){
         <body>
             <div class="min-h-screen bg-gray-900 flex flex-col items-center justify-start pt-10">
                 <div class="bg-gray-700 shadow rounded-lg p-6 text-gray-50">
-                    <h1 class="text-xl font-semibold mb-4 text-green-500">Todo App</h1>
+                    <h1 class="text-xl font-semibold mb-4 text-green-500">ToDo App</h1>
                     <p class="mb-6">Add your todos below and keep track of your progress.</p>
                     <form class="mb-4" hx-boost="true" hx-post="/todo" hx-target="#todoList" hx-on:submit="document.getElementById('description').value=''">
                         <label class="block text-sm font-medium mb-1" for="description">
@@ -33,13 +33,13 @@ templ Home(todos []models.ToDo){
                         <button
                             class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 mt-4 bg-green-500 text-gray-50"
                             type="submit">
-                            Add Todo
+                            Add ToDo
                         </button>
                     </form>
 
                    
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                            @TodoTable(todos)
+                            @ToDoTable(todos)
                     </div>
                     
                 </div>

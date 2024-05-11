@@ -13,7 +13,7 @@ import "bytes"
 import "strconv"
 import models "todo-gotth/models"
 
-func TodoTableItem(todo models.Todo) templ.Component {
+func ToDoTableItem(todo models.ToDo) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -31,7 +31,7 @@ func TodoTableItem(todo models.Todo) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var2 string
-		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(templ.EscapeString(string("todo-" + strconv.Itoa(int(todo.Id)))))
+		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(templ.EscapeString(string("todo-" + strconv.Itoa(int(todo.ID)))))
 		if templ_7745c5c3_Err != nil {
 			return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/todo_table_item.templ`, Line: 6, Col: 180}
 		}
@@ -57,7 +57,7 @@ func TodoTableItem(todo models.Todo) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var4 string
-		templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(templ.EscapeString(string("/todo/" + strconv.Itoa(int(todo.Id)))))
+		templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(templ.EscapeString(string("/todo/" + strconv.Itoa(int(todo.ID)))))
 		if templ_7745c5c3_Err != nil {
 			return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/todo_table_item.templ`, Line: 8, Col: 129}
 		}
@@ -70,7 +70,7 @@ func TodoTableItem(todo models.Todo) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var5 string
-		templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(templ.EscapeString(string("#todo-" + strconv.Itoa(int(todo.Id)))))
+		templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(templ.EscapeString(string("#todo-" + strconv.Itoa(int(todo.ID)))))
 		if templ_7745c5c3_Err != nil {
 			return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/todo_table_item.templ`, Line: 8, Col: 206}
 		}
@@ -96,7 +96,7 @@ func TodoTableItem(todo models.Todo) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var7 string
-		templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(templ.EscapeString(string("/todo/" + strconv.Itoa(int(todo.Id)))))
+		templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(templ.EscapeString(string("/todo/" + strconv.Itoa(int(todo.ID)))))
 		if templ_7745c5c3_Err != nil {
 			return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/todo_table_item.templ`, Line: 16, Col: 99}
 		}

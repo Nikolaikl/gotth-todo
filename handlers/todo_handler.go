@@ -1,4 +1,3 @@
-
 package handlers
 
 import (
@@ -11,69 +10,68 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type TodoHtmlHandler struct {
-	db *database.SQLiteDatabase
+type ToDoHTMLHandler struct {
+	Dbconn *database.SQLiteDatabase
 }
 
-func (h *TodoHtmlHandler) GetAll(ctx *gin.Context) {
-	todoList, err := h.db.All()
+func (h *ToDoHTMLHandler) GetAll(ctx *gin.Context) {
+	todoList, err := h.Dbconn.All()
 	if err != nil {
 		ctx.AbortWithError(http.StatusInternalServerError, err)
 	}
-	ctx.HTML(http.StatusOK, "", views.TodoTable(todoList))
+	ctx.HTML(http.StatusOK, "", views.ToDoTable(todoList))
 }
 
-func (h *TodoHtmlHandler) Create(ctx *gin.Context) {
+func (h *ToDoHTMLHandler) Create(ctx *gin.Context) {
 	description := ctx.PostForm("description")
 	todo := models.ToDo{
 		Description: description,
 		Completed:   false,
 	}
-	_, err := h.db.Create(todo)
+	_, err := h.Dbconn.Create(todo)
 	if err != nil {
 		ctx.AbortWithError(http.StatusInternalServerError, err)
 	}
-	todoList, err := h.db.All()
+	todoList, err := h.Dbconn.All()
 	if err != nil {
 		ctx.AbortWithError(http.StatusInternalServerError, err)
 	}
-	ctx.HTML(http.StatusOK, "", views.TodoTable(todoList))
+	ctx.HTML(http.StatusOK, "", views.ToDoTable(todoList))
 }
 
-func (h *TodoHtmlHandler) Update(ctx *gin.Context) {
-	// this only updates the completed status
+func (h *ToDoHTMLHandler) Update(ctx *gin.Context) {
 	id := ctx.Param("id")
-	intId, err := strconv.Atoi(id)
+	intID, err := strconv.Atoi(id)
 	if err != nil {
 		ctx.AbortWithError(http.StatusInternalServerError, err)
 		return
 	}
 
-	todoToUpdate, err := h.db.GetByID(int64(intId))
+	todoToUpdate, err := h.Dbconn.GetByID(int64(intID))
 	if err != nil {
 		ctx.AbortWithError(http.StatusNotFound, err)
 		return
 	}
 
 	todoToUpdate.Completed = !todoToUpdate.Completed
-	updatedTodo, err := h.db.Update(int64(intId), *todoToUpdate)
+	updatedTodo, err := h.Dbconn.Update(int64(intID), *todoToUpdate)
 	if err != nil {
 		ctx.AbortWithError(http.StatusInternalServerError, err)
 		return
 	}
 
-	ctx.HTML(http.StatusOK, "", views.TodoTableItem(*updatedTodo))
+	ctx.HTML(http.StatusOK, "", views.ToDoTableItem(*updatedTodo))
 }
 
-func (h *TodoHtmlHandler) Delete(ctx *gin.Context) {
+func (h *ToDoHTMLHandler) Delete(ctx *gin.Context) {
 	id := ctx.Param("id")
-	intId, err := strconv.Atoi(id)
+	intID, err := strconv.Atoi(id)
 	if err != nil {
 		ctx.AbortWithError(http.StatusInternalServerError, err)
 		return
 	}
 
-	err = h.db.Delete(int64(intId))
+	err = h.Dbconn.Delete(int64(intID))
 	if err != nil {
 		ctx.AbortWithError(http.StatusInternalServerError, err)
 		return

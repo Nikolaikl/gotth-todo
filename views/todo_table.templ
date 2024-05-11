@@ -3,7 +3,7 @@ package views
 import "todo-gotth/models"
 
 
-templ TodoTable(todos []models.Todo) {
+templ ToDoTable(todos []models.ToDo) {
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-50" id="todoList">
         <thead class="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-green-500 dark:text-gray-100">
             <tr>
@@ -20,7 +20,7 @@ templ TodoTable(todos []models.Todo) {
         </thead>
         <tbody>
         for _, todo := range todos {
-           @TodoTableItem(todo)
+           @ToDoTableItem(todo)
         }
         </tbody>
     </table>
