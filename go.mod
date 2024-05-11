@@ -1,4 +1,4 @@
-module todo.de/home
+module "todo-gotth"
 
 go 1.22.3
 
