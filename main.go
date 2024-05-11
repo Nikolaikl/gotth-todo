@@ -36,8 +36,8 @@ func main() {
 	router.GET("/", homeHTMLHandler.GetHome)
 	router.GET("/todo", todoHTMLHandler.GetAll)
 	router.POST("/todo", todoHTMLHandler.Create)
-	router.PATCH("/todo", todoHTMLHandler.Update)
-	router.DELETE("/todo", todoHTMLHandler.Delete)
+	router.PATCH("/todo/:id", todoHTMLHandler.Update)
+	router.DELETE("/todo/:id", todoHTMLHandler.Delete)
 	
 	router.Run(":42069")
 }
