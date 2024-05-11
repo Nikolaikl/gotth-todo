@@ -29,7 +29,7 @@ func (srv *SQLiteDatabase) Migrate() error {
 	query := `
 		CREATE TABLE IF NOT EXISTS todos(
 			id INTEGER PRIMARY KEY AUTOINCREMENT,
-			description TEXT NOT NULL UNIQUE
+			description TEXT NOT NULL UNIQUE,
 			completed BOOLEAN NOT NULL DEFAULT FALSE
 	);
 	`
