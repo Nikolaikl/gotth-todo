@@ -1,5 +1,13 @@
 {
+  "name": "gotth-todo",
+  "private": true,
+  "module": "0.0.1",
+  "type": "module",
   "devDependencies": {
     "tailwindcss": "^3.4.3"
+  },
+  "scripts": {
+    "build": "tailwindcss build -o static/css/tailwind.css --minify",
+    "watch": "tailwindcss build -o static/css/tailwind.css --watch"
   }
 }
