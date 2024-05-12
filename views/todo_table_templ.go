@@ -25,7 +25,7 @@ func ToDoTable(todos []models.ToDo) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<table class=\"w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-50\" id=\"todoList\"><thead class=\"text-xs text-gray-700 uppercase bg-gray-200 dark:bg-green-500 dark:text-gray-100\"><tr><th scope=\"col\" class=\"px-6 py-3\">Description</th><th scope=\"col\" class=\"px-6 py-3\">Completed</th><th scope=\"col\" class=\"px-6 py-3\">Delete</th></tr></thead> <tbody>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<table class=\"w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-50\" id=\"todoList\"><thead class=\"text-xs text-gray-700 uppercase bg-gray-200 dark:bg-orange-500 dark:text-gray-100\"><tr><th scope=\"col\" class=\"px-6 py-3\">Description</th><th scope=\"col\" class=\"px-6 py-3\">Completed</th><th scope=\"col\" class=\"px-6 py-3\">Delete</th></tr></thead> <tbody>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

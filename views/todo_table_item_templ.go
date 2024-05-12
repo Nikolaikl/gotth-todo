@@ -104,7 +104,7 @@ func ToDoTableItem(todo models.ToDo) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" hx-confirm=\"Are you sure you want to delete this Todo?\" hx-target=\"closest tr\" hx-swap=\"outerHTML swap:1s\">Delete</button></td></tr>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" hx-confirm=\"Are you sure you want to delete this?\" hx-target=\"closest tr\" hx-swap=\"outerHTML swap:1s\">Delete</button></td></tr>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
